@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  QuizApp
+//  EnhanceQuizStarter
 //
-//  Created by Francisco Luna on 1/7/19.
-//  Copyright © 2019 Francisco Luna. All rights reserved.
+//  Created by Pasan Premaratne on 3/12/18.
+//  Copyright © 2018 Treehouse. All rights reserved.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
