@@ -9,7 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+   
+    // Buttons needed
+    @IBOutlet weak var buttonOne: UIButton!
+    @IBOutlet weak var buttonTwo: UIButton!
+    @IBOutlet weak var buttonThree: UIButton!
+    @IBOutlet weak var buttonFour: UIButton!
+    @IBOutlet weak var scorePlayAgain: UIButton!
+    
+    // Labels for the questions
+    @IBOutlet var gameQuestions: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

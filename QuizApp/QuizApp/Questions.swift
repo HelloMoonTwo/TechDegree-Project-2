@@ -6,6 +6,7 @@
 //  Copyright © 2019 Francisco Luna. All rights reserved.
 //
 
+// List of questions
 struct Questions {
     let trivia: [[String : String]] = [
         ["Question": "Alabama", "Answer": "Montgomery"],
