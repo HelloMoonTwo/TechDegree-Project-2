@@ -6,9 +6,9 @@
 //  Copyright © 2019 Francisco Luna. All rights reserved.
 //
 
-// List of questions
-struct Questions {
-    let trivia: [[String : String]] = [
+struct QuestionList {
+    // List of possible questions/states to ask wtih answers/capitals
+    var trivia: [[String : String]] = [
         ["Question": "Alabama", "Answer": "Montgomery"],
         ["Question": "Alaska", "Answer": "Juneau"],
         ["Question": "Arizona", "Answer": "Phoenix"],
