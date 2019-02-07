@@ -31,6 +31,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button One"/>
+                                <connections>
+                                    <action selector="testButtonOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U6s-ED-HM3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZF-J9-3NW">
                                 <rect key="frame" x="50" y="351.5" width="275" height="38"/>
@@ -38,6 +41,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button Two"/>
+                                <connections>
+                                    <action selector="testButtonTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJC-bs-V1h"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZg-yz-tfc">
                                 <rect key="frame" x="50" y="419.5" width="275" height="38"/>
@@ -45,6 +51,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button Three"/>
+                                <connections>
+                                    <action selector="testButtonThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oCe-d8-HQi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctI-It-9ba">
                                 <rect key="frame" x="50" y="487.5" width="275" height="38"/>
@@ -52,13 +61,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button Four"/>
+                                <connections>
+                                    <action selector="testButtonFour:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R3F-Nx-Lvy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCH-oB-ClC">
                                 <rect key="frame" x="50" y="579" width="275" height="38"/>
                                 <color key="backgroundColor" red="0.31372549020000001" green="0.7843137255" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Let's Play Again!"/>
+                                <state key="normal" title="Next Question!"/>
                                 <connections>
                                     <action selector="nextQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wUg-iC-OSw"/>
                                 </connections>

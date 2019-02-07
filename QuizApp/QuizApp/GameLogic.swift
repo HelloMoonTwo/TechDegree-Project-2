@@ -47,6 +47,10 @@ func makeQuestion() {
     possibleAnswers.insert(questionAnswer, at: randomLimit)
 }
 
-func testIfCorrect() {
-    
+// Function for the game to start again
+func newGame() {
+    gotRight = 0
+    gotWrong = 0
+    possibleQuestions = QuestionList()
 }
+
