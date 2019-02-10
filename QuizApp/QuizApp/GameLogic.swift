@@ -26,10 +26,10 @@ var questionsPerRound: Int = 5
 func makeQuestion() {
     // This will get a random State/Question with it's Capital/Answer
     var randomLimit = GKRandomSource.sharedRandom().nextInt(upperBound: possibleQuestions.trivia.count)
-    var questionAndAnswer = possibleQuestions.trivia[randomLimit]
+    let questionAndAnswer = possibleQuestions.trivia[randomLimit]
     possibleQuestions.trivia.remove(at: randomLimit)
-    questionAsking = questionAndAnswer["Question"]!
-    questionAnswer = questionAndAnswer["Answer"]!
+    questionAsking = questionAndAnswer.question
+    questionAnswer = questionAndAnswer.answer
     
     // This will get 3 other random answer into the mix of choices
     var tracker: Int = 0
@@ -37,9 +37,9 @@ func makeQuestion() {
     repeat {
         tracker += 1
         let randomLimit = GKRandomSource.sharedRandom().nextInt(upperBound: possibleQuestions.trivia.count)
-        var getRandomAnswer: [String: String] = [:]
+        var getRandomAnswer: QuestionForm
         getRandomAnswer = possibleQuestions.trivia[randomLimit]
-        possibleAnswers += [getRandomAnswer["Answer"]!]
+        possibleAnswers += [getRandomAnswer.answer]
     } while tracker < 3
     
     // This will place the correct answer into the mix
