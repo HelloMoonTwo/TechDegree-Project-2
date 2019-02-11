@@ -20,13 +20,15 @@ class ViewController: UIViewController {
     // Labels for the question
     @IBOutlet weak var gameQuestion: UILabel!
     
+    var gameLogic = GameLogic()
+    
     // Function to get the final result of the round
     func finalResult() {
-        switch gotRight {
+        switch gameLogic.gotRight {
         case 5: gameQuestion.text = "WooHoo! You got all right!"
-        case 3...4: gameQuestion.text = "Great job, you got \(gotRight) correct"
-        case 1...2: gameQuestion.text = "You may want to study a bit, you got \(gotRight) correct"
-        default: gameQuestion.text = "Well, who needs to know this anyway? You got \(gotWrong) wrong!"
+        case 3...4: gameQuestion.text = "Great job, you got \(gameLogic.gotRight) correct"
+        case 1...2: gameQuestion.text = "You may want to study a bit, you got \(gameLogic.gotRight) correct"
+        default: gameQuestion.text = "Well, who needs to know this anyway? You got \(gameLogic.gotWrong) wrong!"
         }
     }
     
@@ -35,14 +37,14 @@ class ViewController: UIViewController {
         // Checks to see if enough quesitons have been asked
         // If more questions can be asked it will create one
         // If question limit has been meet, it will offer the player to play again
-        if gotRight + gotWrong < questionsPerRound {
-            makeQuestion()
+        if gameLogic.gotRight + gameLogic.gotWrong < gameLogic.questionsPerRound {
+            gameLogic.makeQuestion()
             letsPlay.setTitle("Next Quesiton!", for: .normal)
-            gameQuestion.text = "What is the Capital of \(questionAsking)"
-            buttonOne.setTitle(possibleAnswers[0], for: .normal)
-            buttonTwo.setTitle(possibleAnswers[1], for: .normal)
-            buttonThree.setTitle(possibleAnswers[2], for: .normal)
-            buttonFour.setTitle(possibleAnswers[3], for: .normal)
+            gameQuestion.text = "What is the Capital of \(gameLogic.questionAsking)"
+            buttonOne.setTitle(gameLogic.possibleAnswers[0], for: .normal)
+            buttonTwo.setTitle(gameLogic.possibleAnswers[1], for: .normal)
+            buttonThree.setTitle(gameLogic.possibleAnswers[2], for: .normal)
+            buttonFour.setTitle(gameLogic.possibleAnswers[3], for: .normal)
             letsPlay.isHidden = true
             buttonOne.isHidden = false
             buttonTwo.isHidden = false
@@ -51,7 +53,7 @@ class ViewController: UIViewController {
         } else {
             finalResult()
             letsPlay.setTitle("Let's Play Again!", for: .normal)
-            newGame()
+            gameLogic.newGame()
         }
     }
     
@@ -59,22 +61,22 @@ class ViewController: UIViewController {
     // If correct, player can go to the next question
     // If incorrect, player will see the right answer and be able to go the next question
     func testIfCorrect(buttonToTest: String) {
-        if buttonToTest == questionAnswer {
+        if buttonToTest == gameLogic.questionAnswer {
             gameQuestion.text = "Correct!"
             letsPlay.isHidden = false
             buttonOne.isHidden = true
             buttonTwo.isHidden = true
             buttonThree.isHidden = true
             buttonFour.isHidden = true
-            gotRight += 1
+            gameLogic.gotRight += 1
         } else {
-            gameQuestion.text = "Sorry, the capital of \(questionAsking) is \(questionAnswer)"
+            gameQuestion.text = "Sorry, the capital of \(gameLogic.questionAsking) is \(gameLogic.questionAnswer)"
             letsPlay.isHidden = false
             buttonOne.isHidden = true
             buttonTwo.isHidden = true
             buttonThree.isHidden = true
             buttonFour.isHidden = true
-            gotWrong += 1
+            gameLogic.gotWrong += 1
         }
     }
     
@@ -98,16 +100,16 @@ class ViewController: UIViewController {
         playGame()
     }
     @IBAction func testButtonOne(_ sender: Any) {
-        testIfCorrect(buttonToTest: possibleAnswers[0])
+        testIfCorrect(buttonToTest: gameLogic.possibleAnswers[0])
     }
     @IBAction func testButtonTwo(_ sender: Any) {
-        testIfCorrect(buttonToTest: possibleAnswers[1])
+        testIfCorrect(buttonToTest: gameLogic.possibleAnswers[1])
     }
     @IBAction func testButtonThree(_ sender: Any) {
-        testIfCorrect(buttonToTest: possibleAnswers[2])
+        testIfCorrect(buttonToTest: gameLogic.possibleAnswers[2])
     }
     @IBAction func testButtonFour(_ sender: Any) {
-        testIfCorrect(buttonToTest: possibleAnswers[3])
+        testIfCorrect(buttonToTest: gameLogic.possibleAnswers[3])
     }
     
     
